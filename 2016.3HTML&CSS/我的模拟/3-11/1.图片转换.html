@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.btn input{
+			background-color: white;
+		}
+	</style>
+</head>
+<body>
+	<img id="pic" src="img/1.jpg" alt="">
+	<div class="btn">
+		<input type="button" value="1">
+		<input type="button" value="2">
+		<input type="button" value="3">
+	</div>
+	<script type="text/javascript" src="js/jquery-1.11.1.js">
+	</script>
+	<script type="text/javascript">
+		$(".btn input").click(function(){
+			//alert($(this).index());//index()方法，获取属性
+			var ind = $(this).index();
+			var num = ind + 1;
+			var src = "img/" + num + ".jpg";//自己创建了路径
+			$("#pic").attr("src",src);
+			$(this).css("background-color","red");
+			//siblings()找到其他的属性
+			$(this).siblings().css("background-color","white");	
+		});
+	</script>
+</body>
+</html>

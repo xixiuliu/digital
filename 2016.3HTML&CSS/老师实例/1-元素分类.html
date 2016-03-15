@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		.clear{
+			clear:both;
+		}
+		.a-box{
+			/*border:1px solid #00f;
+			height:120px;*/
+		}
+		.a-box a{
+			border:1px solid red;
+			width:100px;
+			height:100px;
+			margin-top:100px;
+			display: block;
+		}
+		.box{
+
+			border:1px solid red;
+			display: inline;
+		}
+		img{
+			width:100px;
+			height:100px;
+			border:1px solid red;
+			margin-left: 50px;
+		}
+		.in-block{
+			border: 1px solid red;
+			display: inline-block;
+			height:100px;
+
+		}
+		.i-b-box{
+			text-indent: 20px;height: 1000px;width: 1000px;border: 1px solid;
+		}
+	</style>
+</head>
+<body>
+	<!-- 块元素：独立成行：又宽高，又上下边距 -->
+	<div>这是一个div</div>
+	<div class="box">这又是一个div</div>
+	<p></p>
+	<ul>
+		<li></li>
+	</ul>
+
+	<div class="a-box">
+		<!-- 内联元素：不能设置宽高，宽高适应内容，不独立成行,没有上下边距， -->
+		<a href="">这是一个a标签</a>
+		<a href="">这是一个a标签</a>
+		<span>这是一个span</span>
+	</div>
+	<!-- 内联块元素 -->
+	<div class="i-b-box">
+		<img src="images/1.jpg" alt="">
+		<img src="images/1.jpg" alt="">
+		<img src="images/1.jpg" alt="">
+		<div class="in-block"><a>asfasf</a></div>
+		<div class="in-block"><a>asdfsadf</a></div>
+		<div class="in-block"><a>asdfasdfa</a></div>
+	</div>
+
+</body>
+</html>

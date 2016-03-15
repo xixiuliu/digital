@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<img id="pic"src="img/1.jpg" alt="无法加载图片">
+	<div class="btn">
+		<form action="">
+			<input type="button" value="1">
+			<input type="button" value="2">
+			<input type="button" value="3">
+		</form>
+	</div>
+	<script src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$(".btn input").click(function(){
+			var ind = $(this).index();
+			var num = ind + 1;
+			var src = "img/" + num + ".jpg";
+			$("#pic").attr("src",src);
+			$(this).css("background-color","red");
+			$(this).siblings().css("background-color","white");
+		})
+	</script>
+</body>
+</html>

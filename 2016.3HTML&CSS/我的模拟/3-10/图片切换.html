@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		#list li{
+			width: 20px;
+			height: 20px;
+			list-style: none;
+			line-height: 20px;
+			text-align: center;
+			border: 1px solid red;
+			float: left;
+			cursor: pointer;
+		}
+		#list li:hover{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<img id="pic"src="img/par1.jpg" alt="">
+	<ul id="list">
+		<li class="list1">1</li>
+		<li class="list2">2</li>
+		<li class="list3">3</li>
+	</ul>
+
+	<script src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$(".list1").click(function(){
+			$("#pic").attr("src","img/par1.jpg");
+		});
+		$(".list2").click(function(){
+			$("#pic").attr("src","img/par2.jpg");
+		});
+		$(".list3").click(function(){
+			$("#pic").attr("src","img/par3.jpg");
+		});
+	</script>
+</body>
+</html>
