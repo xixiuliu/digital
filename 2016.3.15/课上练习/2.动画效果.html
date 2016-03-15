@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	
+	<input id="hide"type="button" value="隐藏">
+	<input id="show"type="button" value="显示">
+	<input id="slideDown"type="button" value="下拉">
+	<input id="slideUp"type="button" value="上卷">
+	<input id="fadeOut"type="button" value="渐出">
+	<input id="fadeIn"type="button" value="渐入">
+	<input id="toggle"type="button" value="显示隐藏切换">
+	<input id="fadeToggle"type="button" value="渐出渐入切换">
+	<input id="slideToggle"type="button" value="下拉上卷切换">
+	<div class="box">
+		<img src="../images/1.jpg" alt="">
+	</div>
+
+	<script src="../js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$("#hide").click(function(){
+			$(".box img").hide();//动画效果,调用方法
+		});
+		$("#show").click(function(){
+			$(".box img").show();
+		});
+		$("#slideDown").click(function(){
+			$(".box img").slideDown();
+		});
+		$("#slideUp").click(function(){
+			$(".box img").slideUp();
+		});
+		$("#fadeOut").click(function(){
+			$(".box img").fadeOut();
+		});
+		$("#fadeIn").click(function(){
+			$(".box img").fadeIn();
+		});
+		$("#fadeToggle").click(function(){
+			$(".box img").fadeToggle();
+		});
+		$("#toggle").click(function(){
+			$(".box img").toggle();
+		});
+		$("#slideToggle").click(function(){
+			$(".box img").slideToggle();
+		});
+	</script>
+</body>
+</html>
