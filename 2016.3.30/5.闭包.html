@@ -7,14 +7,14 @@
 <body>
 	<script type="text/javascript">
 		//闭包的特性:内部函数还未执行完,外部函数就不会被销毁
-		function outFun(){
-			var num = 10;
-			function inFun(){
-				console.log(num);
-			}
-			return inFun;
-		}
-		outFun()();
+		// function outFun(){
+		// 	var num = 10;
+		// 	function inFun(){
+		// 		console.log(num);
+		// 	}
+		// 	return inFun;
+		// }
+		// outFun()();
 		// var fn = outFun();
 		// fn();
 
@@ -35,9 +35,7 @@
 		// function fun3(){
 		// 	num1 = 10;
 		// 	function fun4(){//此内部函数可以获取其父级的所有局部变量,如num1的值
-
 		// 		console.log(num1);
-
 		// 	}
 		// 	//fun4可以读取fun3所有的局部变量,所以只要把fun4作为返回值,就可以在fun3外部读取fun4
 		// 	return fun4;
@@ -79,21 +77,22 @@
 		//例子3:
 		// function outerFun(){
 		// 	 var a =0;
-		// 	 console.log(a);
+		// 	 console.log(a);//0
 		// }
 		// 	var a=4;
 		// 	outerFun();
-		// 	console.log(a);
+		// 	console.log(a);//4
 
 		//例子4:
 		//因为没有使用var关键字,因此赋值操作会沿着作用域链到var a=4;  并改变其值.
 		// function outerFun(){
-		// 	a =0;//没有var
-		// 	console.log(a);
+		// 	console.log(a);//4
+		// 	a =0;//没有var,所以上一句代码没有在同级中找到a
+
 		// }
 		// 	var a=4;
 		// 	outerFun();
-		// 	console.log(a);
+		// 	console.log(a);//0
 
 
 	</script>

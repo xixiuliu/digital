@@ -6,29 +6,29 @@
 </head>
 <body>
 	<script type="text/javascript">
-		// var c = (function(){//c的返回值是个对象
-		// 	var num1 = 10;
-		// 	var num2 = 20;
-		// 	var sign = "+";
-		// 	var number = Math.random();
-		// 	function count(num1,num2,sign){
-		// 		switch(sign){
-		// 			case "+":return num1 + num2;
-		// 			case "-":return num1 - num2;
-		// 			case "*":return num1 * num2;
-		// 			case "/":return num1 / num2;
-		// 		}
-		// 	}
-		// 	return {//这个对象是外部可以访问,相当于是外部的接口.
-		// 		num1:num1,
-		// 		num2:num2,
-		// 		sign:sign,
-		// 		count:count
-		// 	}
-		// })()
-		// // c.num1 = 20;
-		// // c.num2 = 30;//可以通过这种方式改变对象的值
-		// console.log(c.count(c.num1,c.num2,c.sign));
+		var c = (function(){//c的返回值是个对象
+			var num1 = 10;
+			var num2 = 20;
+			var sign = "+";
+			var number = Math.random();
+			function count(num1,num2,sign){
+				switch(sign){
+					case "+":return num1 + num2;
+					case "-":return num1 - num2;
+					case "*":return num1 * num2;
+					case "/":return num1 / num2;
+				}
+			}
+			return {//这个对象是外部可以访问,相当于是外部的接口.
+				num1:num1,
+				num2:num2,
+				sign:sign,
+				count:count
+			}
+		})()
+		// c.num1 = 20;
+		// c.num2 = 30;//可以通过这种方式改变对象的值
+		console.log(c.count(c.num1,c.num2,c.sign));
 
 
 	</script>

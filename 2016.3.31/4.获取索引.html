@@ -14,7 +14,7 @@
 	<script type="text/javascript">
 		var aLi = document.getElementsByClassName("num");
 		for(var i = 0;i<aLi.length;i++){
-			aLi[i].onclick = (function(x){
+			aLi[i].onclick = (function(x){//写个立即执行函数
 				return function(){
 					console.log(x);
 				}

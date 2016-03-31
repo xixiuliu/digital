@@ -6,12 +6,12 @@
 </head>
 <body>
 	<script type="text/javascript">
-		function outFun(fun){//函数outFun的形参是个函数
-			fun();
-		}
-		outFun(function(){//调用outFun时,传的实参是匿名函数.
-			console.log("hello");
-		})
+		// function outFun(fun){//函数outFun的形参是个函数
+		// 	fun();
+		// }
+		// outFun(function(){//调用outFun时,传的实参是匿名函数.
+		// 	console.log("hello");
+		// })
 
 
 		// var value = 100;
@@ -26,6 +26,21 @@
 		// }
 		// setValue();
 		// getValue();
+
+		//回调函数解决异步执行问题
+		var value = 100;
+		function setValue(callback){
+			// value++;
+			setTimeout(function() {
+				value++;
+				callback();
+			},1000);
+		}
+		function getValue(){
+			console.log(value);
+		}
+		setValue(getValue);
+
 	</script>
 </body>
 </html>
