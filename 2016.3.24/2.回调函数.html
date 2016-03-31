@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		function fun(fn){//fn是函数的形参,且传回的实参又是一个函数
+			var x = 1;
+			var y = 2;
+			var z = x + y;
+			fn(z);//在执行时,需要回调函数
+		}
+		//调用fun()时,实参是个函数
+		fun(function(a){
+			console.log(a);
+		})
+	</script>
+</body>
+</html>

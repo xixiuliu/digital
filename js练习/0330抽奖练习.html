@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="点击抽奖" class="btn">
+	<script type="text/javascript">
+		var aBtn = document.getElementsByClassName("btn");
+		var nameList = ["一一","二二","三三","四四","五五","六六","七七","八八","九九"];
+		var obj = {};
+		var count = 0;
+		function getName(){
+			var num = Math.floor(Math.random() * nameList.length);//获取数组中的一个随机数.
+			if(obj[nameList[num]] == undefined){
+				console.log(nameList[num]);
+				obj[nameList[num]] = 1;
+			}else{
+				getName();//再调用一次函数,重复抽奖
+			}
+		}
+		aBtn[0].onclick = function(){
+			if(count < nameList.length){
+				getName();
+			}else{
+				console.log("已抽完!");
+			}
+			count++;
+			console.log(count);
+		}
+
+	</script>
+</body>
+</html>

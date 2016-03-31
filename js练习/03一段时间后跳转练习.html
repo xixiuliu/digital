@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p><span id="time"></span>秒后跳转到百度</p>
+	<script type="text/javascript">
+		var oTime = document.getElementById("time");
+		var n = 5;
+		oTime.innerText = n;
+		function countDown(){
+			n--;
+			oTime.innerHTML = n;//显示内容,解析标签
+			// oTime.innerText = n;//显示内容,不解析标签
+			if(n == 1){
+				location.href = "http://www.baidu.com";
+			}
+
+		}
+		setInterval(countDown,1000);
+
+		// var n = 5;
+		// // // oTime.innerHTML = "5";
+		// // oTime.write("n");
+		// $("#time").text(n);
+		// function count(){
+		// 	n--;
+		// 	$("#time").text(n);
+		// 	if(n == 0){
+		// 		location.href = "http://www.baidu.com";//location对象是BOM对象
+		// 	}
+		// }
+		// setInterval(count,1000);
+	</script>
+</body>
+</html>

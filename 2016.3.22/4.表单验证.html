@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单验证</title>
+	<style type="text/css">
+		div{
+			height: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<input type="text" id="txt1" placeholder="请输入您的邮箱地址">
+		<span class="list1"></span>
+	</div>
+	<div>
+		<input type="text" id="txt2" placeholder="请输入您的手机号码">
+		<span class="list2"></span>
+	</div>
+
+
+
+	<script src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		var reg1 =/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;//全局变量不要重名
+		$("#txt1").blur(function(){
+			var str = $(this).val();
+			var res = reg1.test(str);
+			console.log(res);
+			if(res){
+				$(".list1").text("格式正确");
+			}else{
+				$(".list1").text("请输入正确的邮箱地址");
+			}
+		});
+		var reg2 = /^1[3|4|5|7|8]\d{9}$/;//全局变量不要重名,否则会覆盖.
+		$("#txt2").blur(function(){
+			var str = $(this).val();
+			var res = reg2.test(str);
+			if(res){
+				$(".list2").text("格式正确");
+			}else{
+				$(".list2").text("请输入正确的手机号码");
+			}
+		});
+	</script>
+</body>
+</html>

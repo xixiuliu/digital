@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.green{
+			color: green;
+		}
+		.red{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" id = "txt" placeholder="请输入正确的邮箱地址">
+	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+		$("#txt").blur(function(){
+
+			var val = $(this).val();
+			var result = reg.test(val);
+			var span = $("<span></span>");//创建一个jquery对象.
+
+			if(result){
+				$("span").remove();
+				span.addClass("green");//给span标签添加class属性为"green";
+				span.text("验证通过");
+				$("body").append(span);
+			}else{
+				$("span").remove();//全部remove掉
+				span.addClass("red");//给span标签添加class属性为"green";
+				span.text("验证错误");
+				$("body").append(span);
+			}
+		})
+	</script>
+</body>
+</html>

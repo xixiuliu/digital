@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="添加" id="btn">
+	<ul id="list">
+		<li>香蕉</li>
+		<li>苹果</li>
+		<li>鸭梨</li>
+	</ul>
+	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+
+		$("#btn").click(function(){    // 绑定按钮的点击事件
+			var result = prompt("添加内容");  //将弹出框的内容赋值给result
+			if(result != null && result != ""){
+				//var li = "<li>" + result + "</li>";
+
+				var li = $("<li id=\"aaa\"></li>");
+				li.text(result);
+
+				$("#list").append(li);
+			}
+		})
+
+	</script>
+</body>
+</html>

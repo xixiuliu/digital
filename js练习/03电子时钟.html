@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<span></span>
+	<script src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		// var dateNow = new Date();
+		// var hour = dateNow.getHours();
+		// var minute = dateNow.getMinutes();
+		// var second = dateNow.getSeconds();
+		// $("span").text("现在是:" +hour+ "时" +minute+ "分" +second+ "秒");
+		function fun(){
+			var dateNow = new Date();//每次都获取新的时间.
+			var hour = dateNow.getHours();
+			var minute = dateNow.getMinutes();
+			var second = dateNow.getSeconds();
+			$("span").text("现在是:" +hour+ "时" +minute+ "分" +second+ "秒");
+
+		}
+		setInterval(fun,1000);
+
+	</script>
+</body>
+</html>

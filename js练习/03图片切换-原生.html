@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.num{
+			list-style: none;
+			float: left;
+			border: 1px solid red;
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			text-align: center;
+			cursor: pointer;
+		}
+		.active{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<img id="pic"src="images/1.jpg" alt="">
+	</div>
+	<ul id="list">
+		<li class="num">1</li>
+		<li class="num">2</li>
+		<li class="num">3</li>
+		<li class="num">4</li>
+	</ul>
+	<script type="text/javascript">
+		var arrSrc = ["images/1.jpg","images/2.jpg","images/3.jpg","images/4.jpg"];
+		//将所有的图片路径都存在一个数组中.
+		var oImg = document.getElementById("pic");
+		var oBtn = document.getElementsByClassName("num");//oBtn的返回值是个函数
+		for(var i = 0;i<oBtn.length;i++){
+			oBtn[i].onclick = function(){//oBtn是个数组,想要获取其中的值必须要有数组下标
+				var ind = index(this);//调用index()函数
+				oImg.src = arrSrc[ind];//点击时,找到对应索引值的图片属性.
+				addClass(this,"active");//调用addClass()函数
+				var a = siblings(this);//此时a是个数组;
+				for(var j = 0;j<a.length;j++){
+					removeClass(a[j],"active");
+				}
+			}
+		}
+		//第一步,获取点击事件的索引值.
+		function index(element){//索引:找到该元素的父级的所有子级.
+			var eleParent = element.parentNode;//获取元素的父级节点
+			var eleAll = eleParent.children;//获取该父级节点的所有子节点
+			for(var i = 0;i<eleAll.length;i++){
+				if(eleAll[i] == element){
+					return i;
+				}
+			}
+		}
+		//第二步,为该点击事件添加一个class属性.
+		function addClass(element,str){
+			element.className = element.className +" "+str;//若是在""间不加空格,就会改变"num"的类名为"numactive"
+		}
+		//第三步,找到点击事件元素的其他同级元素
+		function siblings(element){//找到父级的子级,将与点击事件不同的所有同级元素加到一个数组中
+			var arrNew = [];
+			var eleParent = element.parentNode;
+			var eleAll = eleParent.children;
+			for(var i = 0;i<eleAll.length;i++){
+				if(eleAll[i] != element){
+					arrNew.push(eleAll[i]);//将eleAll数组中的元素添加到arrNew这个数组中
+				}
+			}
+			return arrNew;//返回数组,在调用时需要用到其返回值
+		}
+		//第四步,删除同级其他元素的同级元素
+		function removeClass(element,str){
+			var arr = element.className.split(" ");//spilt()方法将字符串转换成数组
+			var arrNew = [];
+			for(var i = 0;i<arr.length;i++){
+				if(arr[i] != str){
+					arrNew.push(arr[i]);
+				}
+			}
+			var newClassName = arrNew.join(" ");//join()方法将数组转换成字符串
+			element.className = newClassName;
+		}
+
+	</script>
+</body>
+</html>

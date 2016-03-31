@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box">
+		<input type="button" value="按钮" id="btn">
+		<input type="button" value="1" class="num">
+		<input type="button" value="2" class="num">
+		<input type="button" value="3" class="num">
+	</div>
+
+	<script type="text/javascript">
+
+		//DOM操作
+
+		var oBtn = document.getElementById("btn");//通过document对象.方法()来获取id.返回值是id名的本身.
+		// console.log(oBtn);
+		oBtn.onclick = function(){//onclick是个属性,操作click事件.
+			// console.log("hello");
+		}
+		//获取class.
+		var aBtn = document.getElementsByClassName("num");//返回值是个数组.
+		for(var i = 0;i<aBtn.length;i++){
+			aBtn[i].onclick = function(){
+			// console.log(this.value);
+			}
+		}
+		// console.log(aBtn);
+
+		//通过标签名获取
+		var eBtn = document.getElementsByTagName("input");//返回值是数组
+		// console.log(eBtn);
+
+		//获取父级的子节点
+
+		var oBox = document.getElementById("box");
+		var aChildren = oBox.children;//获取box下的所有子节点,返回值是数组.
+		console.log(aChildren);
+
+
+	</script>
+</body>
+</html>

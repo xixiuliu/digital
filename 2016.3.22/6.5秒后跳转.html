@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>5秒后跳转</title>
+</head>
+<body>
+	<p><span></span>秒跳转到百度</p>
+	
+	<!-- <input type="button" value="开始" id="start">
+	<input type="button" value="停止" id="stop"> -->
+	<script src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		var n = 5;
+		$("span").text(n);//text()方法设置或返回被选元素的文本内容，显示出数字5
+		function countDown(){
+			n--;
+			$("span").text(n);
+			console.log(n);		  	
+		  	 //再次获取
+		  	if(n==0){
+		  		location.href="http://www.baidu.com";
+		  	}
+		}
+		setInterval(countDown,1000);
+		
+		// $("#stop").click(function(){
+		// 	clearInterval(t);
+		// })
+		// $("#start").click(function(){
+		// 	t = setInterval(fun,1000);
+		// })
+
+
+
+
+			 
+	</script>
+</body>
+</html>

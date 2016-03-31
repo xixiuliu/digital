@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" value="添加" id="btn">
+	<ul id="list">
+		<li>首页<span class="del"> 删除</span></li>
+		<li>视频<span class="del"> 删除</span></li>
+		<li>新闻<span class="del"> 删除</span></li>
+	</ul>
+	<script type="text/javascript">
+		var oTxt = document.getElementById("txt");
+		var oBtn = document.getElementById("btn");
+		var oList = document.getElementById("list");
+		oBtn.onclick = function(){
+			var val = oTxt.value;
+			var oLi = document.createElement("li");
+			var oText = document.createTextNode(val);
+			var oSpan = document.createElement("span");
+			oSpan.className = "del";//为创建的span标签添加属性
+			var oSpant = document.createTextNode(" 删除");
+			oSpan.appendChild(oSpant);
+			oLi.appendChild(oText);
+			oLi.appendChild(oSpan);
+			oList.appendChild(oLi);
+		}
+		oList.onclick = function(event){
+			var elem = event.target;//target 事件属性可返回事件的目标节点（触发该事件的节点），如生成事件的元素、文档或窗口
+			if(elem.className == "del"){//如果不写判断,在点除了删除的其他元素就会报错
+			oList.removeChild(elem.parentNode);
+			}
+		}
+	</script>
+</body>
+</html>

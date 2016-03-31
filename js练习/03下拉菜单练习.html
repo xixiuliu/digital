@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下拉菜单</title>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding: 0px;
+		}
+		.list1 li{
+			list-style: none;
+		}
+		.list2 li{
+			list-style: none;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul class="list1">
+			<li>下拉菜单</li>
+		</ul>
+		<ul class="list2">
+			<li><a href="">各种列表</a></li>
+			<li><a href="">列表1</a></li>
+			<li><a href="">列表2</a></li>
+		</ul>
+	</div>
+	
+	<script src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$(".list1").mouseenter(function(){
+			$(".list2 li").slideDown();
+		})
+		$(".box").mouseleave(function(){
+			$(".list2 li").slideUp();
+		})
+	</script>
+</body>
+</html>

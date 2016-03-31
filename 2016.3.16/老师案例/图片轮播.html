@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		.box{
+			height: 500px;
+			width: 500px;
+			border:1px solid #f00;
+			overflow: hidden;
+		}
+		#list{
+			width:2000px;
+			list-style: none;
+		}
+		#list li{
+			height: 500px;
+			width: 500px;
+			float: left;
+		}
+		.box1{
+			background-color: #f00;
+		}
+		.box2{
+			background-color: #ff0;
+		}
+		.box3{
+			background-color: #00f;
+		}
+		.box4{
+			background-color: #0f0;
+		}
+		#list-num li{
+			width: 20px;
+			height: 20px;
+			border: 1px solid #00f;
+			list-style:none;
+			float: left;
+			text-align: center;
+			line-height: 20px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="box">
+		<ul id="list">
+			<li class="box1"></li>
+			<li class="box2"></li>
+			<li class="box3"></li>
+			<li class="box4"></li>
+		</ul>
+	</div>
+	<ul id="list-num">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+
+	<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$("#list-num li").click(function(){
+			var index = $(this).index();
+			var marLeft = -500 * index;
+			$("#list").animate({"margin-left":marLeft},5000);
+		})
+	</script>
+</body>
+</html>

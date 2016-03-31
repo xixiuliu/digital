@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.big-box{
+			width: 400px;
+			height: 50px;
+			margin: 0 auto;
+		}
+		.big-box .list{
+			width: 50px;
+			height: 30px;
+			border: 1px solid red;
+			list-style: none;
+			float: left;
+			margin-right: 30px;
+			overflow: hidden;
+			cursor: pointer;
+		}
+		.big-box .list .box{
+			width: 50px;
+			height: 60px;
+			background-color: red;
+		}
+		.big-box .list .box span{
+			line-height: 30px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="big-box">
+		<ul>
+			<li class="list">
+				<div class="box">
+					<span>菜单</span>
+					<span>首页</span>
+				</div>
+			</li>
+			<li class="list"></li>
+			<li class="list"></li>
+		</ul>
+	</div>
+
+	<script src="../js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$(".list").mouseenter(function(){
+			$(".box").animate({"margin-top":"-30px"});
+		})
+		$(".list").mouseleave(function(){
+			$(".box").animate({"margin-top":"0px"});
+		})
+	</script>
+</body>
+</html>

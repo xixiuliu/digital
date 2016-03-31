@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单验证</title>
+	<style>
+		p{
+			display: none;
+		}
+		.red{
+			color: red;
+		}
+		.green{
+			color: green;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" id="txt">
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		var reg=/^[0-9a-zA-Z]{5,9}\@[a-z]{1,2}\.(com|cn)$/;
+
+		$("#txt").blur(function(){
+
+			var val = $(this).val();
+			var result = reg.test(val)
+			var span = $("<span></span>");
+
+			if(result){
+				$("span").remove();
+				span.addClass("green");
+				span.text("验证通过！");
+				$("body").append(span);
+			}else{
+				$("span").remove();
+				span.addClass("red");
+				span.text("验证失败！");
+				$("body").append(span);
+			}
+
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片移动</title>
+	<style type="text/css">
+		.pic img{
+			width: 100px;
+			height: 100px;
+			float: left;
+			margin-right: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<div class="pic"><img src="images/1.jpg" alt=""></div>
+		<div class="pic"><img src="images/2.jpg" alt=""></div>
+		<div class="pic"><img src="images/3.jpg" alt=""></div>
+	</div>
+	<script src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$(".pic img").mouseenter(function(){
+			$("body").append('<div class="pict"><img src=""></div>');
+			var src = $(this).attr("src");
+			$(".pict img").attr("src",src);
+		});
+		$(".pic img").mousemove(function(event){
+			var x = event.pageX;
+			var y = event.pageY;
+			$(".pict img").css({"position":"absolute","left":x+20,"top":y+20});
+		});
+		$(".pic img").mouseleave(function(){
+			$(".pict img").remove();
+		});
+	</script>
+</body>
+</html>

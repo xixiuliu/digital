@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片轮播</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.big-box{
+			width: 200px;
+			height: 200px;
+			overflow: hidden;
+			/*border: 1px solid red;*/
+		}
+		.box{
+			width: 1000px;
+			height: 200px;
+			list-style:none;
+			/*border: 1px solid blue;*/
+		}
+		.box li{
+			float: left;
+		}
+		.btn{
+			cursor: pointer;
+			clear: both; 
+		}
+	</style>
+</head>
+<body>
+	<div class="big-box">
+		<div class="box">
+			<li><img src="images/1.jpg" alt=""></li>
+			<li><img src="images/2.jpg" alt=""></li>
+			<li><img src="images/3.jpg" alt=""></li>
+			<li><img src="images/4.jpg" alt=""></li>
+		</div>
+	</div>
+	<div>
+		<input type="button" class="btn" value="1">
+		<input type="button" class="btn" value="2">
+		<input type="button" class="btn" value="3">
+		<input type="button" class="btn" value="4">
+	</div>
+	<script src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$(".btn").click(function(){
+			var index = $(this).index();
+			console.log(index);//测试
+			var marleft = -200 * index;
+			$(".box").animate({"margin-left":marleft});
+		})
+
+	</script>
+</body>
+</html>

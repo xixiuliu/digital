@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.big-box{
+			width: 200px;
+			height: 200px;
+			border: 1px solid red;
+			overflow: hidden;
+		}
+		.box{
+			width: 800px;
+			height: 200px;
+			border: 1px solid blue;
+		}
+		img{
+			float: left;
+		}
+		.clear{
+			clear: both;
+		}
+		.list li{
+			width: 20px;
+			height: 20px;
+			border: 1px solid red;
+			float: left;
+			line-height: 20px;
+			text-align: center;
+			list-style: none;
+			cursor: pointer;
+			margin-left: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="big-box">
+		<div class="box">
+			<div><img src="images/1.jpg" alt=""></div>
+			<div><img src="images/2.jpg" alt=""></div>
+			<div><img src="images/3.jpg" alt=""></div>
+			<div><img src="images/4.jpg" alt=""></div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<ul class="list">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		var n = 0;
+		function count(){
+			$(".box").animate({"margin-left":-200 * n},3000);
+			n++;
+			if(n == 4){
+				n=0;
+			}
+		};
+		var t = setInterval(count,3000);
+
+		$(".list").mouseenter(function(){
+			clearInterval(t);
+		}).mouseleave(function(){
+			t = setInterval(count,3000);
+		});
+		$(".list li").click(function(){
+			var index = $(this).index();
+			$(".box").animate({"margin-left":-200 * index},3000);
+		});
+
+	</script>
+</body>
+</html>

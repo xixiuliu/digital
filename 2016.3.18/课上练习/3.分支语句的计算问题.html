@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt1">
+	<input type="text" id="txt2">
+	<input type="text" id="txt3">
+	<input type="text" id="txt4">
+	<input type="button" id="btn" value="提交">
+	<script src="../js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$("#btn").click(function(){
+			var val1 = $("#txt1").val();
+			var num1 = Number(val1);
+			var val2 = $("#txt2").val();
+			var val3 = $("#txt3").val();
+			var num3 = Number(val3);
+			var res = 0;
+			if(val2 == "+"){
+				res = num1 + num3;			
+			}
+			if(val2 == "-"){
+				res = num1 - num3;
+			}
+			if(val2 == "*"){
+				res = num1 * num3;
+			}
+			if(val2 == "/"){
+				res = num1 / num3;				
+			}
+			$("#txt4").val(res);
+		}) 
+	</script>
+</body>
+</html>

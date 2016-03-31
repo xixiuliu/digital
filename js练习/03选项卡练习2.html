@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡</title>
+	<style type="text/css">
+		.pic img{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div><!-- 谨记,id是唯一的 -->
+		<input type="button" class="btn" value="1">
+		<input type="button" class="btn" value="2">
+		<input type="button" class="btn" value="3">
+		<input type="button" class="btn"value="4">
+	</div>
+	
+
+	<div class="pic">
+		<img src="images/1.jpg" alt="">
+		<img src="images/2.jpg" alt="">
+		<img src="images/3.jpg" alt="">
+		<img src="images/4.jpg" alt="">
+	</div>
+	<script src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$(".btn").click(function(){
+			var index = $(this).index();//获取按钮的索引
+			//console.log(index);
+			$(".pic img").eq(index).css("display","block").siblings().css("display","none");
+		});
+	</script>
+</body>
+</html>

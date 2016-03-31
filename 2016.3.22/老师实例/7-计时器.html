@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<input type="button" id="stop" value="暂停">
+	<input type="button" id="start" value="开始">
+	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+
+		// function fun(){
+		// 	//语句
+		// }
+
+		// setInterval(fun,1000);
+
+
+
+		// clearInterval();
+
+
+		// setTimeout(fun,1000);
+		// clearTimeout();
+
+		var n = 0;
+		function fun(){
+			console.log(n);
+			n++;
+		}
+		var t = setInterval(fun,1000);
+
+		$("#stop").click(function(){
+			clearInterval(t);
+		})
+		$("#start").click(function(){
+			// t = setInterval(fun,1000);
+			location.href = "http://baidu.com";
+		})
+
+	</script>
+</body>
+</html>

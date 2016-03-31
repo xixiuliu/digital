@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+
+		// function createFun(){
+		// 	var arr = [];
+		// 	for(var i = 5;i<10;i++){
+		// 		arr[i] = function(){
+		// 			return i;//上级i的的最终结果
+		// 		}
+		// 	}
+		// 	return arr;
+		// }
+
+		// var fn = createFun();
+		// console.log(fn);//是个数组,且数组的每个元素都是function.
+		// var n = fn[8]();
+		// console.log(n);//结果是10
+
+
+		function createFun(){
+			var arr = [];
+			for(var i = 0;i<10;i++){
+				arr[i] = (function(x){
+
+					return function(){
+						return x;
+
+					}
+				})(i);
+			}
+			return arr;
+		}
+		var fn = createFun();//createFun()的返回值是个数组arr
+		console.log(fn);//是个数组,且数组的每个元素都是function.
+		var n = fn[4]();
+		console.log(n);//结果是4.
+
+	</script>
+</body>
+</html>

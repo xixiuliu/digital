@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正则表达式</title>
+</head>
+<body>
+	<input type="text" id="txt">
+
+	<script src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		// //正则表达式,test()方法	
+		// var reg = /^[0-9]+\@[0-9a-z]{2,3}\.com$/;
+		// $("#txt").blur(function(){//blur()获取焦点的事件.
+		// 	var str = $(this).val();
+		// 	var res = reg.test(str);
+		// 	console.log(res);
+		// })
+
+		//正则表达式,exec()方法
+		var date = "2016-3-22";
+		var reg = /^([0-9]{4})\-([0-9]{1,2})\-([0-9]{1,2})$/;
+		var res = reg.exec(date);
+		console.log(res);
+		var year = res[1];
+		var month = res[2];
+		var day = res[3];
+		console.log("今天是:" +year+ "年" +month+ "月" +day+ "日");
+
+
+	</script>
+</body>
+</html>

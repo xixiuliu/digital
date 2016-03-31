@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" id="btn" value="添加">
+
+	<ul id="list">
+		<li>qqqqq<sapn class="del">删除</span></li>
+		<li>wwwww<sapn class="del">删除</span></li>
+		<li>eeeee<sapn class="del">删除</span></li>
+	</ul>
+
+
+	<script type="text/javascript">
+
+		var oBtn = document.getElementById("btn");
+		var oTxt = document.getElementById("txt");
+		var oUl = document.getElementById("list")
+
+		oBtn.onclick = function(){
+			var val = oTxt.value;//获取文本框中的value值
+			// console.log(val);
+			var oLi = document.createElement("li");//创建一个元素节点
+			var oText = document.createTextNode(val);//创建一个文本节点
+			oLi.appendChild(oText);//将文本节点放到元素节点中.
+			oUl.appendChild(oLi);//就li元素节点放到ul元素节点中.即为ul添加子节点
+		}
+		var oDel = document.getElementsByClassName("del");
+
+		for(var i = 0;i<oDel.length;i++){
+			oDel[i].onclick = function(){
+				oUl.removeChild(this.parentNode);//从ul来找到子节点li,然后删除.
+			}
+		}
+
+		// var aDel = document.getElementsByClassName("del");
+		// for(var i =0;i<aDel.length;i++){
+		// 	aDel[i].onclick = function(){
+		// 		oUl.removeChild(this.parentNode);
+		// 	}
+		// }
+
+		// function remove(node){
+		// 	node.parentNode.removeChild()
+		// }
+
+	</script>
+</body>
+</html>

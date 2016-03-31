@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加元素</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" id="btn" value="点击添加">
+	<ul class="list">
+		<li>首页</li>
+		<li>视频</li>
+		<li>新闻</li>
+	</ul>
+	<script src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$("#btn").click(function(){
+			var value = $("#txt").val();
+			var li = "<li>" + value + "</li>";
+			$(".list").append(li);
+		});
+	</script>
+</body>
+</html>

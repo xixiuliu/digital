@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		//不用递归函数实现阶乘
+		// function count(num){
+		// 	var res = 1;
+		// 	for(var i = num;i>0;i--){
+		// 		res = res * i;
+		// 	}
+		// 	return res;
+		// }
+		// console.log(count(5));
+
+		//用递归函数实现函数阶乘
+		function count(e){
+			if(e == 1){
+				return 1;
+			}else{
+				return e * count(e - 1);
+			}
+		}
+		console.log(count(5));
+
+	</script>
+</body>
+</html>

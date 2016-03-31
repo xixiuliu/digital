@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+
+		// var txt = "hello";
+		//当声明一个变量时,实际上已经创建了一个javascript字符串对象
+		// console.log(txt.length);//字符串对象拥有内建属性length.同时也拥有不同的内建方法
+
+
+
+		//创建自己的对象
+		// var person = {
+		// 	name : "妮妮",
+		// 	age : 18,
+		// 	skincolor :"white",
+		// 	sayName:function(){
+		// 		console.log("我的名字叫:" + this.name);//当某个对象的属性是个函数时,我们就称它为对象的方法.且必须调用方法时,才会执行.
+		// 		return this;
+		// 	}
+		// };
+		//  var per = person.sayName().age;
+		//  console.log(per);
+		// // console.log(person.name);
+
+
+
+		//javascript数字
+		// var pi = 3.14;
+		// console.log(pi);
+		// var x = 34;//整数的精度最多为15位
+		// console.log(x);
+
+		// //极大或极小的数字可以通过科学计数法来写.
+		// var y = 123e5;
+		// console.log(y);
+		// var z = 123e-5;
+		// console.log(z);
+
+
+
+		// var x = 0.1 + 0.2;//小数的最大位数是17,但结果不是100%精确.
+		// console.log(x);//此时x的值为 0.30000000000000004.
+
+
+		//字符串对象
+		// var txt = "hello world!";
+		// document.write(txt.length);
+		// document.write(txt.toUpperCase());
+		//toUpperCase()方法将字符串转换成大写字母.
+
+		// //日期对象
+		// var myDate = new Date();
+		// // myDate.setFullYear(2008,7,8);//为日期对象设置一个特定日期setFullYear()方法,表示月份的参数在0-11之间.
+		// // myDate.setDate(myDate.getDate()+6);//将日期对象设为5天后的日期,若增加日期天数会改变月份或年份,则日期对象会自动转换.
+		// myDate.setHours(21,40,0);
+		// document.write(myDate);
+
+
+		//数学对象,无需在这个对象使用之前对它定义.
+		// var res = Math.round(4.7);//round()方法对一个数进行四舍五入
+		// var res = Math.random();//random()方法返回一个0-1之间的随机数.
+		// var res = Math.floor(Math.random()*11);//返回0-10之间的随机数.一共有11个数
+		// document.write(res);
+
+
+		//函数
+		// function fun(){
+		// 	alert("hello!");
+		// }
+		// fun();
+		// function fun(var1,var2){//带参函数
+		// 	alert("welcome " +var1+ ", our " +var2);
+		// }
+		// fun("bill","ceo");
+
+		function fun(){
+			var x = 1;
+			return x;
+		}
+		alert(fun());
+	</script>
+</body>
+</html>

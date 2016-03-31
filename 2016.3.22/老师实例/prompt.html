@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button>添加</button>
+	<ul>
+		<li>香蕉</li>
+		<li>橘子</li>
+		<li>苹果</li>
+	</ul>
+
+
+	<script src="js/jquery-1.11.1.js"></script>
+	<script>
+		$("button").click(function(){
+			var result=prompt("请输入内容");
+			console.log(result);
+			var aa="<li>"+result+"</li>"
+			$("ul").append(aa);
+		})
+	</script>
+</body>
+</html>

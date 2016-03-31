@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.list{
+			list-style: none;
+			float: left;
+			width: 20px;
+			height: 20px;
+			border: 1px solid red;
+			line-height: 20px;
+			text-align: center;
+			cursor: pointer;
+		}
+		.active{
+			background-color: #f00;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<img id="pic" src="images/1.jpg" alt="">
+	</div>
+	<ul id="small-box">
+		<li class="list">1</li>
+		<li class="list">2</li>
+		<li class="list">3</li>
+		<li class="list">4</li>
+	</ul>
+
+	<script type="text/javascript">
+		var arrSrc = ["images/1.jpg","images/2.jpg","images/3.jpg","images/4.jpg"];
+		var oList = document.getElementsByClassName("list");
+		var oImg = document.getElementById("pic");
+		for(var i = 0;i<oList.length;i++){
+			oList[i].onclick = function(){
+				var ind = index(this);//调用index()函数
+				oImg.src = arrSrc[ind];
+				addClass(this,"active");
+				var a = siblings(this);
+				// console.log(a);
+				for(var j = 0;j<a.length;j++){
+					removeClass(a[j],"active");
+				}
+			}
+		}
+		// var btn = siblings(oList[2]);
+		// console.log(btn);测试
+
+		function index(element){	//声明获取索引值的函数
+			var eleParent = element.parentNode;
+			var eleAll = eleParent.children;
+			for(var i =0;i<eleAll.length;i++){
+				if(eleAll[i] == element){
+					return i;
+				}
+			}
+		};
+		function addClass(element,str){
+			element.className = element.className +" "+str;//引号之间是空格
+		};
+
+		function siblings(element){
+			var arr = [];
+			var eleParent = element.parentNode;
+			var eleAll = eleParent.children;
+			for(var i = 0;i<eleAll.length;i++){
+				if(eleAll[i] != element){
+					arr.push(eleAll[i]);
+				}
+			}
+			return arr;
+		}
+		function removeClass(element,str){
+			var arr = element.className.split(" ");
+			var arrNew = [];
+			for(var i = 0;i<arr.length;i++){
+				if(arr[i] != str){
+					arrNew.push(arr[i]);
+				}
+			}
+			var newClassName = arrNew.join(" ");
+			element.className = newClassName;
+		}
+
+
+	</script>
+</body>
+</html>

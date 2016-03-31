@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>输入框</title>
+</head>
+<body>
+	<input type="button" id="btn" value="添加">
+	<ul class="list">
+		<li><a href="">首页</a></li>
+		<li><a href="">视频</a></li>
+		<li><a href="">新闻</a></li>
+	</ul>
+
+	<script src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$("#btn").click(function(){
+			var res = prompt("请输入您的内容:");
+			if(res){//隐式转换为true或false
+				var li = "<li>" +res+ "</li>";
+				// console.log(li);
+				$(".list").prepend(li);
+			}
+			
+		})
+	</script>
+</body>
+</html>

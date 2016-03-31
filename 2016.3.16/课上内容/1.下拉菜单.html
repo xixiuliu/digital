@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{ 
+			margin: 0px;
+			padding: 0px;
+		}
+		.big-box{
+			height: 300px;
+			background-image: url("../images/bg2.png");
+			background-repeat: repeat;
+		}
+		.list{
+			width: 150px;
+			height: 150px;
+			list-style: none;
+			color: #ececec;
+			float: left;
+			margin-right: 20px;
+			cursor: pointer;
+		}
+		.box{
+			clear: both;
+			display: none;
+			color: #ececec;
+		}
+		.box a{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="big-box">
+		<ul>
+			<li class="list">
+				<span>首页</span>
+				<div class="box">
+					<a href="">返回首页</a>
+				</div>
+			</li>
+			<li class="list">
+				<span>网上选课</span>
+				<div class="box">
+					<a href="">全校选修性选课</a>
+				</div>				
+			</li>
+			<li class="list">
+				<span>活动报名</span>
+				<div class="box">
+					<a href="">学生网上投票</a>
+				</div>				
+			</li>
+			<li class="list">
+				<span>教学质量评价</span>
+				<div class="box">
+					<a href="">学生评教</a>
+				</div>				
+			</li>
+			<li class="list">
+				<span>信息维护</span>
+				<div class="box">
+					<a href="">个人信息</a>
+					<a href="">密码修改</a>
+					<a href="">成绩单打印预约</a>
+				</div>				
+			</li>
+			<li class="list">
+				<span>信息查询</span>
+				<div class="box">
+					<a href="">学生个人课表</a>
+					<a href="">学生考试查询</a>
+					<a href="">学生成绩查询</a>
+				</div>				
+			</li>
+			<li class="list">
+				<span>公用信息</span>		
+			</li>
+		</ul>
+	</div>
+
+	<script src="../js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$(".list").mouseenter(function(){
+			$(this).find(".box").stop().slideDown();
+		})
+		$(".list").mouseleave(function(){
+			$(this).find(".box").stop().slideUp();
+		})
+	</script>
+</body>
+</html>

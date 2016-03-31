@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.box{
+			width: 200px;
+			height: 200px;
+			border: 1px solid red;
+			overflow: hidden;
+		}
+		.small-box{
+			width: 1000px;
+			height: 200px;
+			list-style: none;
+			
+		}
+		.small-box li{
+			float: left;
+		}
+		.list-box li{
+			list-style: none;
+			float: left;
+			margin-right: 5px;
+			border: 1px solid red;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul class="small-box">
+			<li><img src="../images/1.jpg" alt=""></li>
+			<li><img src="../images/2.jpg" alt=""></li>
+			<li><img src="../images/3.jpg" alt=""></li>
+			<li><img src="../images/4.jpg" alt=""></li>
+			<li><img src="../images/5.jpg" alt=""></li>
+		</ul>
+	</div>
+	<ul class="list-box">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<script src="../js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$(".list-box li").click(function(){
+			var index = $(this).index();
+			var marLeft = -200 * index;
+			$(".small-box").animate({"margin-left":marLeft},3000);
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加元素</title>
+</head>
+<body>
+	<input type="text" id="txt"><!-- 文本框中的value值开始无 -->
+	<input type="button" id="btn" value="添加元素">
+	<ul class="list">
+		<li>首页</li>
+		<li>新闻</li>
+		<li>视频</li>
+	</ul>
+	<script src="../js/jquery-1.11.1.js"></script>
+	<script>
+		$("#btn").click(function(){
+			var value = $("#txt").val();//val()是获取value值的方法
+			//若去掉下一行，则添加的不是列表而是纯文本
+			var li = "<li>" + value + "</li>"
+			//$(".list").append(li);在列表后添加元素 
+			$(".list").prepend(li);//在列表前添加元素
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.big-box{
+			width: 200px;
+			height: 200px;
+			overflow: hidden;
+		}
+		.box{
+			width: 800px;
+			height: 200px;
+			float: left;
+		}
+		.box li{
+			float: left;
+			list-style: none;
+		}
+		.box1 li{
+			width: 20px;
+			height:20px;
+			border: 1px solid red;
+			cursor: pointer;
+			float: left;
+			list-style: none;
+			line-height: 20px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="big-box">
+		<ul class="box">
+			<li><img src="images/1.jpg" alt=""></li>
+			<li><img src="images/2.jpg" alt=""></li>
+			<li><img src="images/3.jpg" alt=""></li>
+			<li><img src="images/4.jpg" alt=""></li>
+		</ul>
+	</div>
+	<ul class="box1">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+
+	<script src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		var n = 1;
+		function ani(){
+			n = n==4 ? 0 : n;//三目运算符.
+			$(".box").animate({"margin-left":-200 * n},3000);
+			n++;
+			// if(n==4){
+			// 	n=0;
+			// }
+
+		}
+		var t = setInterval(ani,3000);
+
+
+
+		$(".box1 li").click(function(){
+			var index = $(this).index();
+			$(".box").animate({"margin-left":-200 * index},3000);
+			n = index + 1;//从点击的按钮开始往后自动轮播
+		})
+
+		$(".box1").mouseenter(function(){
+			clearInterval(t);
+		}).mouseleave(function(){
+			t = setInterval(ani,3000);
+		})
+
+	</script>
+</body>
+</html>

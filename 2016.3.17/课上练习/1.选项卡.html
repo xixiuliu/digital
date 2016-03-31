@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.list1 li{
+			list-style: none;
+			float: left;
+			border: 1px solid red;
+		}
+		.list2 li{
+			clear: both;
+			list-style: none;
+			width: 200px;
+			height: 100px;
+			border: 1px solid red;
+			background-color: red;
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<ul class="list1">
+		<li>选项一</li>
+		<li>选项二</li>
+		<li>选项三</li>
+		<li>选项四</li>
+	</ul>
+	<ul class="list2">
+		<li>一</li>
+		<li>二</li>
+		<li>三</li>
+		<li>四</li>
+	</ul>
+		
+	<script src="../js/jquery-1.11.1.js"></script>
+	<script>
+		$(".list1 li").click(function(){
+			 var index = $(this).index();
+			 console.log(index);
+			 $(".list2 li").eq(index).css("display","block").siblings().css("display","none");
+		});
+	</script>
+</body>
+</html>

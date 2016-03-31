@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.btn{
+			list-style: none;
+			float: left;
+			width: 20px;
+			height: 20px;
+			border: 1px solid red;
+			cursor: pointer;
+			line-height: 20px;
+			text-align: center;
+		}
+		.active{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<img id="pic" src="images/1.jpg" alt="">
+	</div>
+	<ul>
+		<li class="btn">1</li>
+		<li class="btn">2</li>
+		<li class="btn">3</li>
+		<li class="btn">4</li>
+	</ul>
+	<script type="text/javascript">
+		var arrSrc = ["images/1.jpg","images/2.jpg","images/3.jpg","images/4.jpg"];
+		var aBtn = document.getElementsByClassName("btn");
+		var	oImg = document.getElementById("pic");
+		for(var i = 0;i<aBtn.length;i++){
+			aBtn[i].onclick = function(){
+				var ind = index(this);
+				oImg.src = arrSrc[ind];
+				addClass(this,"active");
+				var a = siblings(this);
+				for(var j = 0;j<a.length;j++){
+					removeClass(a[j],"active");
+				}
+			}
+		}
+		function index(element){
+			var aParent = element.parentNode;
+			var aChildren = aParent.children;
+			for(var i = 0;i<aChildren.length;i++){
+				if(aChildren[i] == element){
+					return i;
+				}
+			}
+		}
+		function addClass(element,str){
+			element.className = element.className +" "+str;
+		}
+		function siblings(element){
+			var arrNew = [];
+			var aParent = element.parentNode;
+			var aChildren = aParent.children;
+			for(var i = 0;i<aChildren.length;i++){
+				if(aChildren[i] != element){
+					arrNew.push(aChildren[i]);
+				}
+			}
+			return arrNew;
+		}
+		function removeClass(element,str){
+			var arr = element.className.split(" ");
+			var arrNew = [];
+			for(var i = 0;i<arr.length;i++){
+				if(arr[i] != str){
+					arrNew.push(arr[i]);
+				}
+			}
+			var newClassName = arrNew.join(" ");
+			element.className = newClassName;
+		}
+	</script>
+</body>
+</html>

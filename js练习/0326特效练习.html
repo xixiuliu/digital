@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}/*这么写很浪费资源的.*/
+		/*实现选项卡*/
+		/*.choose li{
+			list-style: none;
+			width: 50px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			float: left;
+			margin-left: 10px;
+			border: 1px solid red;
+			cursor: pointer;
+		}
+		.list{
+			clear: both;
+			list-style: none;
+		}
+		.list li{
+			display: none;
+		}*/
+
+		/*实现下拉菜单*/
+		/*.box{
+			width: 70px;
+			height: 70px;
+		}
+		.list2 li{
+			display: none;
+		}*/
+
+		/*实现图片轮播*/
+		/*.big-box{
+			width: 200px;
+			height: 200px;
+			overflow: hidden;
+		}
+		.box{
+			width: 800px;
+			height: 200px;
+		}
+		.pic{
+			float: left;
+		}
+		.clear{
+			clear: both;
+		}
+		.list li{
+			list-style: none;
+			width: 20px;
+			height: 20px;
+			border: 1px solid red;
+			line-height: 20px;
+			text-align: center;
+			float: left;
+			cursor: pointer;
+		}*/
+
+		/*图片移动*/
+		/*.pic{
+			list-style: none;
+			float: left;
+			margin-left: 50px;
+			margin-top: 50px;
+		}
+		.pic img{
+			width: 100px;
+			height: 100px;
+		}
+		.clear{
+			clear: both;
+		}*/
+
+		/*菜单滚动*/
+		.box{
+			width: 80px;
+			height: 30px;
+			margin: 0 auto;
+			background-color: red;
+			overflow: hidden;
+		}
+		.list{
+			width: 80px;
+			height: 60px;
+		}
+		.list1{
+			width: 80px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			list-style: none;
+			background-color: yellow;
+		}
+		.list2{
+			width: 80px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			list-style: none;
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<!-- 添加和删除原有的元素 -->
+	<!-- <input type="text" id="txt">
+	<input type="button" id="btn" value="添加元素">
+	<ul class="list">
+		<li>首页<span>删除</span></li>
+		<li>新闻<span>删除</span></li>
+		<li>视频<span>删除</span></li>
+	</ul> -->
+
+	<!-- 选项卡的实现 -->
+	<!-- <ul class="choose">
+		<li>选项一</li>
+		<li>选项二</li>
+	</ul>
+	<ul class="list">
+		<li><img src="images/1.jpg"></li>
+		<li><img src="images/2.jpg"></li>
+	</ul> -->
+
+	<!-- 下拉菜单实现 -->
+		<!-- <div class="box">
+			<ul class="list1">
+				<li>下拉菜单</li>
+			</ul>
+			<ul class="list2">
+				<li><a href="">首页</a></li>
+				<li><a href="">视频</a></li>
+				<li><a href="">新闻</a></li>
+			</ul>
+		</div> -->
+
+		<!-- 图片轮播且点击的按钮背景颜色会变 -->
+		<!-- <div class="big-box">
+			<div class="box">
+				<div class="pic"><img src="images/1.jpg" alt=""></div>
+				<div class="pic"><img src="images/2.jpg" alt=""></div>
+				<div class="pic"><img src="images/3.jpg" alt=""></div>
+				<div class="pic"><img src="images/4.jpg" alt=""></div>
+			</div>
+		</div>
+		<div class="clear"></div> 浮动会影响父级的同级,所以需要在父级下清浮动 -->
+		<!-- <ul class="list">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul> -->
+
+		<!-- 图片移动 -->
+		<!-- <ul class="list">
+			<li class="pic"><img src="images/1.jpg" alt=""></li>
+			<li class="pic"><img src="images/2.jpg" alt=""></li>
+			<li class="pic"><img src="images/3.jpg" alt=""></li>
+			<li class="pic"><img src="images/4.jpg" alt=""></li>
+		</ul>
+		<div class="clear"></div> -->
+
+		<!-- 菜单滚动 -->
+		<div class="box">
+			<ul class="list">
+				<li class="list1">菜单</li>
+				<li class="list2">菜单</li>
+			</ul>
+		</div>
+
+
+
+	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		//添加和删除原有的元素
+		// $("#btn").click(function(){
+		// 	var val = $("#txt").val();
+		// 	$(".list").append("<li>" +val+ "</li>");//append()添加一个标签不用在外层加"".
+		// })
+		// $("span").click(function(){
+		// 	$(this).parent().remove();
+		// });
+
+		//选项卡的实现
+		// $(".choose li").click(function(){
+		// 	// alert("nihao");//测试
+		// 	var index = $(this).index();
+		// 	// console.log(index);//测试
+		// 	$(".list li").eq(index).css("display","block").siblings().css("display","none");//siblings()是指同级的其他元素
+		// });
+
+		//下拉菜单实现
+		// $(".list1 li").mouseenter(function(){
+		// 	$(".list2 li").slideDown();
+		// });
+		// $(".box").mouseleave(function(){//下拉菜单当鼠标移开整个div时才上卷
+		// 	$(".list2 li").slideUp();
+		// });
+
+		// 图片轮播且点击的按钮背景颜色会变
+		// $(".list li").click(function(){
+		// 	$(this).css("background-color","red").siblings().css("background-color","white");
+		// 	var index = $(this).index();
+		// 	$(".box").animate({"margin-left":-200 * index},3000);
+		// });
+
+		//图片移动
+		// $(".pic img").mouseenter(function(){
+		// 	$("body").append("<div class=\"apppic\"><img src=\"\"></div>");
+		// 	var src = $(this).attr("src");
+		// 	// console.log(src);测试
+		// 	$(".apppic img").attr("src",src);
+		// });
+		// $(".pic img").mousemove(function(event){
+		// 	var x = event.pageX;
+		// 	var y = event.pageY;
+		// 	$(".apppic img").css({"position":"absolute","left":x+20,"top":y+20});
+		// });
+		// $(".pic img").mouseleave(function(){
+		// 	$(".apppic").remove();
+		// });
+
+		//菜单滚动
+		$(".list1").mouseenter(function(){
+			$(".list").stop().animate({"margin-top":-30},3000);
+		});
+		$(".box").mouseleave(function(){
+			$(".list").stop().animate({"margin-top":0},3000);
+		})
+
+	</script>
+</body>
+</html>

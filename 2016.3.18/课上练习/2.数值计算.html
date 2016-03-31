@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="box">
+		<input id="txt1" type="text"> +
+		<input id="txt2" type="text"> =
+		<input id="txt3" type="text">
+	</div>
+	
+	<input id="btn" type="button" value="提交">
+	<script src="../js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$("#btn").click(function(){
+			var value1 = $("#txt1").val();
+			var value2 = $("#txt2").val();
+			//空字符转化为数字为0.
+			var num1 = Number(value1);
+			var num2 = Number(value2);
+			var result = num1 + num2;
+			$("#txt3").val(result);//获取计算结果的value值
+			//append用来添加元素节点和文本节点.
+			
+
+		})
+	</script>
+</body>
+</html>

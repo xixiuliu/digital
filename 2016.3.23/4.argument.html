@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		function count(){
+			var arg =  arguments.length;
+			if(arg == 1){
+				return arguments[0] * arguments[0];
+			}else if(arg == 2){
+				return arguments[0] * arguments[1];
+			}
+
+		}
+		var res = count(3,4);
+		console.log(res);
+	</script>
+</body>
+</html>

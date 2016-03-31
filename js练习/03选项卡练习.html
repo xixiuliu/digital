@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡练习</title>
+	<style type="text/css">
+		.big-box img{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<form id="btn"action="">
+		<input type="button" value="1">
+		<input type="button" value="2">
+		<input type="button" value="3">
+		<input type="button" value="4">
+	</form>
+	<div class="big-box">
+		<img src="images/1.jpg">
+		<img src="images/2.jpg">
+		<img src="images/3.jpg">
+		<img src="images/4.jpg">
+	</div>
+	<script src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$("#btn input").click(function(){
+			var index = $(this).index();
+			console.log(index);
+			$(".big-box img").eq(index).css("display","block").siblings().css("display","none");
+		 	
+		});
+	</script>
+</body>
+</html>

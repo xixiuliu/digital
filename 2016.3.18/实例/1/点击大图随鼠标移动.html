@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	.a{
+		height:100px;
+	}
+	.a1{
+		height: 50px;
+		width: 50px;
+		float:left;
+	}
+	.a2{
+		height: 50px;
+		width: 50px;
+		float:left;
+	}
+	.a3{
+		height: 50px;
+		width: 50px;
+		float:left;
+	}
+	.space{
+		width: 200px;
+		height: 200px;
+
+
+	}
+	.clear{
+		clear:both;
+	}
+.space img{
+	position:relative;
+	top:0;
+	left:0;
+}
+	</style>
+</head>
+<body>
+<div class="a">
+	<div class="a1">
+		<img src="images/1.jpg" alt="" width="50px" height="50px">
+	</div>
+	<div class="a2">
+		<img src="images/2.jpg" alt=""  width="50px" height="50px">
+	</div>
+	<div class="a3">
+		<img src="images/3.jpg" alt=""  width="50px" height="50px">
+	</div>
+	<div class="clear"></div>
+
+</div>
+<!-- <div class="space"><img src="" alt=""></div> -->
+	<script src="js/jquery1.js"></script>
+	<script>
+
+		//1、url尽量不要用字符串拼接的方式。
+		//2、mouseenter事件中不用获取鼠标坐标
+		//3、缩进需要规范
+		//4、变量名要有语义
+
+
+		//鼠标悬浮事件
+		//attr text css html ：一个参数是获取值 两个参数是设置值。
+		$(".a div").mouseenter(function(){
+			$("body").append("<div class=\"space\"><img src=\"\" alt=\"\"></div>");
+			var src = $(this).find("img").attr("src");
+			$(".space img").attr({"src":src});
+		})
+
+
+		//鼠标离开事件
+	    $(".a div").mouseleave(function(){
+	    	$(".space").remove();
+	    })
+
+	    //鼠标移动事件
+		$(".a div").mousemove(function(e){
+			var f=e.pageX;
+			var g=e.pageY;
+			$(".space").css({
+				"position":"absolute",
+				"left":f+20,
+				"top":g+20
+			})
+		})
+
+
+
+
+	</script>
+</body>
+</html>

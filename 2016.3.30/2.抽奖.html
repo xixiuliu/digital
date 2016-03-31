@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="点击抽奖" id="btn">
+	<script type="text/javascript">
+		//第一种
+		// var oBtn = document.getElementById("btn");
+		// var arr = ["1","2","3","4","5","6","7","8"];
+		// var n = 0;
+		// function fun(){
+		// 	var result = Math.floor(Math.random() * arr.length);
+		// 	if(arr[result] == null){
+		// 		fun();
+		// 	}else{
+		// 		console.log(arr[result]);
+		// 		arr[result] = null;//将抽出的位置赋值为null
+		// 	}
+		// }
+		// oBtn.onclick = function(){
+			// if(n<arr.length){
+			// 	fun();
+			// }else{
+			// 	console.log("已抽完!");
+			// }
+		// 	n++;
+
+		// }
+
+		//第二种
+		// var oBtn = document.getElementById("btn");
+		// var arr = ["aaa","bbb","ccc","ddd","eee","fff","lll"];
+		// var n = 0;
+		// var arrNew = [];
+		// function fun(){
+		// 	var res = Math.floor(Math.random() * arr.length);
+		// 	if(arrNew.length == 0){
+		// 		console.log(arr[res]);
+		// 		arrNew.push(arr[res]);
+		// 	}else{
+		// 		for(var i = 0;i<arrNew.length;i++){
+		// 			if(arrNew[i] == arr[res]){
+		// 				fun();
+		// 				return ;//不加值,表示停止函数的运行
+		// 			}
+		// 		}
+		// 		console.log(arr[res]);
+		// 		arrNew.push(arr[res]);
+		// 	}
+		// }
+		// oBtn.onclick = function(){
+		// 	if(n<arr.length){
+		// 		fun();
+		// 	}else{
+		// 		console.log("已抽完!");
+		// 	}
+		// 	n++;
+
+		// }
+
+		//第三种
+		// var oBtn = document.getElementById("btn");
+		// var arr = ["aaa","bbb","ccc","ddd","eee","fff","lll"];
+		// var obj = {};
+		// function fun(){
+		// 	var res = Math.floor(Math.random() * arr.length);
+		// 	if(obj[arr[res]] == undefined){
+		// 		console.log(arr[res]);
+		// 		obj[arr[res]] = 1;
+		// 	}else{
+		// 		fun();
+		// 	}
+		// }
+		// oBtn.onclick = function(){
+		// 	fun();
+		// }
+
+		var obj = {};
+		//为空的对象添加属性.
+		// obj.name = "li";
+		var n = "name";
+		obj[n] = "wang";
+		console.log(obj);
+
+	</script>
+</body>
+</html>

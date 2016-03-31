@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box">
+		<input type="button" value="按钮" id="btn">
+		<input type="button" value="1" class="num">
+		<input type="button" value="2" class="num">
+		<input type="button" value="3" class="num">
+	</div>
+	<script type="text/javascript">
+		// $("#btn").click(function(){
+		// 	alert("nihao")
+		// })
+
+		//获取一个DOM对象
+
+		//通过ID获取节点
+		var oBtn = document.getElementById("btn");
+		oBtn.onclick = function(){							
+			alert("nihao");                                 /*alert弹出对话框*/
+		}
+
+		//通过class获取节点
+		var aBtn = document.getElementsByClassName("num");
+
+		// aBtn.onclick = function(){
+		// 	alert(this.value)
+		// }
+		for(var i = 0;i<aBtn.length;i++){
+			aBtn[i].onclick = function(){
+				alert(this.value);/*用for循环语句对class中的”num“（内容）进行修改*/
+			}
+		}
+
+		var eBtn = document.getElementsByTagName("input");   /*通过标签名（input）的节点*/
+		//console.log(eBtn);
+
+		var oBox = document.getElementById("box");
+		var aChildren = oBox.children;
+		console.log(aChildren);
+		/*三种不同的获取节点的方法。获取节点，获取对象才能开始对其操作*/
+
+
+
+
+
+	</script>
+</body>
+</html>

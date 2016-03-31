@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>电子时钟</title>
+	<style type="text/css">
+		p{
+			font-size: 30px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<p>当前时间是:<span></span></p>
+	<script src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		var dateNow = new Date();
+		$("span").text(dateNow);
+		function time(){
+			var date = new Date();
+			$("span").text(date);
+		}
+		setInterval(time,1000);
+
+	</script>
+</body>
+</html>

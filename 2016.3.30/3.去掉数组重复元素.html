@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//(function(){})() 函数封装
+		(function(){
+			var arr = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9];
+
+			function fun(elem){
+				var obj = {};
+				var arrNew = [];
+				for(var i = 0;i<elem.length;i++){
+					if(obj[arr[i]] == undefined){
+						obj[arr[i]] = 1;
+						arrNew.push(Number(arr[i]));
+					}
+				}
+			//for in可以遍历一个集合,如对象,数组等
+			// for(var j in obj){
+			// 		arrNew.push(Number(j));//输出j是输出的属性名,输出obj[j]则是属性名
+			// 	}
+
+				return arrNew;
+			}
+
+			var res = fun(arr);
+		 	console.log(res);
+		})()
+
+	</script>
+</body>
+</html>

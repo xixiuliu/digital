@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" value="添加" id="btn">
+	<ul id="list">
+		<li>首页 <span class="del">删除</span></li>
+		<li>新闻 <span class="del">删除</span></li>
+		<li>视频 <span class="del">删除</span></li>
+	</ul>
+	<script type="text/javascript">
+		var oTxt = document.getElementById("txt");
+		var oBtn = document.getElementById("btn");
+		var oList = document.getElementById("list");
+
+		oList.onclick = function(event){
+			var elem = event.target;
+			console.log(elem);
+			if(elem.className == "del"){
+				oList.removeChild(elem.parentNode);
+			}
+			// oList.removeChild(elem);
+		}
+		oBtn.onclick = function(){
+			var val = oTxt.value;
+			var oLi = document.createElement("li");
+			var oSpan = document.createElement("span");
+			oSpan.className = "del";
+			var oSpanT =document.createTextNode(" 删除");
+			var oText = document.createTextNode(val);
+			oSpan.appendChild(oSpanT);
+			oLi.appendChild(oText);
+			oLi.appendChild(oSpan);
+			oList.appendChild(oLi);
+		}
+	</script>
+</body>
+</html>
