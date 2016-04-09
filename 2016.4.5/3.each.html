@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul id="list">
+		<li>11</li>
+		<li>22</li>
+		<li>33</li>
+	</ul>
+	<script type="text/javascript" src="jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		//jquery中的each()
+		// $("#list li").each(function(index,element){
+		// 	console.log(index);
+		// 	console.log(element);
+		// });
+
+		//全局的each
+		var $li = $("#list li");
+		$.each($li,function(index,element){
+			console.log(index);
+			console.log(element);
+		});
+
+		var arr = ["11","22","33","44"];
+		$.each(arr,function(index,element){
+			console.log(index);
+			console.log(element);
+		});
+
+		var obj = {
+			name:"lll",
+			age:2,
+			sayName:function(){
+				console.log(this.name);
+			}
+		}
+		$.each(obj,function(index,element){
+			console.log(index);
+			console.log(element);
+		});
+	</script>
+</body>
+</html>

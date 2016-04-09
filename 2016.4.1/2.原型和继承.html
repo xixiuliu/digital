@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// function Cat(lastName){
+		// 	this.lastName = lastName;
+		// }
+
+		// Cat.prototype = {
+		// 	firstName:"li",
+		// 	sayName:function(){
+		// 		console.log(this.firstName + this.lastName);
+		// 	}
+		// }
+		// Cat.prototype.age = 2;
+		// Cat.prototype.sayAge = function(){
+		// 	console.log(this.age);
+		// }
+		// var cat = new Cat("hh");
+		// cat.sayName();
+		// cat.sayAge();
+
+		//原型链
+		function Father(){};
+		Father.prototype = {
+			firstName:"aaa",
+			sayName:function(){
+				console.log(this.firstName);
+			}
+		}
+
+		function Son(){};
+		Son.prototype = new Father();
+
+		Son.prototype.firstName = "bbb";
+		Son.prototype.play = function(){
+			console.log("玩");
+		}
+		var son = new Son();
+		son.sayName();
+		son.play();
+	</script>
+</body>
+</html>

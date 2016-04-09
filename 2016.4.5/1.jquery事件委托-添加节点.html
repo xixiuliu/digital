@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" id="btn" value="添加节点">
+	<input type="button" id="test" value="测试">
+	<input type="button" id="one" value="只触发一次">
+	<ul id="list">
+		<li>1111 <span class="del">删除</span></li>
+		<li>2222 <span class="del">删除</span></li>
+		<li>3333 <span class="del">删除</span></li>
+	</ul>
+	<script type="text/javascript" src="jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+
+		$("#btn").click(function(){
+			var val = $("#txt").val();
+			var $li = $("<li> <span class='del'>删除</span></li>");
+			$li.prepend(val);
+			$("#list").append($li);
+		});
+		// $("#list").delegate(".del","click",function(){
+		// 	$(this).parent().remove();
+		// })
+
+		$("#test").delegate(".del","click",function(){
+			$(this).parent().remove();
+		});
+
+		//给一个元素绑定多个事件
+		$("#test").bind("click mouseenter mouseleave",function(){
+			console.log("nihao");
+		});
+
+		//只触发一次
+		$("#one").one("click",function(){
+			console.log("只触发一次");
+		});
+	</script>
+</body>
+</html>

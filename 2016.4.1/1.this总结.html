@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<SCRIPT TYPE="text/javascript">
+		//1.函数中的this
+		// function fun(){
+		// 	console.log(this);//其中的this是window对象
+		// }
+		// fun();
+
+		//2.闭包中的this
+		// function outFun(){
+		// 	function inFun(){
+		// 		console.log(this);
+		// 	}
+		// 	return inFun;
+		// }
+		// outFun()();
+
+		//3.对象中方法的this
+		// var firstName = "liu";
+		// var obj = {
+		// 	firstName:"zhao",
+		// 	sayName:function(){
+		// 		console.log(this.firstName);//this是obj对象,输出的是obj里的name
+		// 	}
+		// }
+		// obj.sayName();
+
+		//4.对象中的方法中的立即执行函数中的this
+	 	var firstName = "liu";
+		var obj = {
+			firstName:"zhao",
+			sayName:function(){
+				return (function(){
+					return this;
+				})();
+			}
+		}
+		obj.sayName();
+	</SCRIPT>
+</body>
+</html>

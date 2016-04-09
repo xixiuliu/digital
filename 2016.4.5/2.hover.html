@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.box{
+			width: 300px;
+			height: 300px;
+			background-color: #f00;
+		}
+		.small-box{
+			width: 100px;
+			height: 100px;
+			background-color: #ff0;
+		}
+		.active{
+			background-color: #00f;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="small-box"></div>
+	</div>
+	<script type="text/javascript" src="jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$(".box").hover(
+			function(){
+				// $(this).addClass("active");
+				console.log("nihao");
+			},function(){
+				// $(this).removeClass("active");
+				console.log("nihao");
+			}
+		);
+	</script>
+</body>
+</html>
