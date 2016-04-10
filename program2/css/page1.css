@@ -260,6 +260,7 @@
 	width: 1002px;
 	margin: 0 auto;
 	margin-top: 21px;
+	overflow: hidden;
 }
 .content-head{
 	height: 56px;
@@ -360,11 +361,12 @@
 	text-decoration: none;
 }
 .content1{
-	height: 440px;
+	height: 442px;
 	width:1002px;
 	margin-top:12px;
+	overflow: hidden;
 }
-.content1-list1{
+.content-list1{
 	width: 326px;
 	height:440px;
 	border: 1px solid #cccccc;
@@ -414,8 +416,8 @@
 	margin-left:22px;
 }
 .introduce-list1{
-	width:258px;
-	height:16px;
+	/*width:258px;
+	height:16px;*/
 	list-style: none;
 	margin-top:22px;
 	margin-left:20px;
@@ -424,8 +426,8 @@
 	color:#333333;
 }
 .introduce-list2{
-	width:120px;
-	height:11px;
+	/*width:120px;
+	height:11px;*/
 	list-style: none;
 	margin-top:16px;
 	margin-left:20px;
@@ -467,42 +469,131 @@
 	float: left;
 	margin-left: 9px;
 }
-.content1-list2{
+.content-list2{
 	width: 326px;
 	height:440px;
 	border: 1px solid #cccccc;
 	margin-right: 9px;
 	float: left;
 }
-.content1-list3{
+.content-list3{
 	width: 326px;
 	height:440px;
 	border: 1px solid #cccccc;
 	float: left;
 }
+.content1-pic1{
+	width:326px;
+	height: 223px;
+	background-image: url("../images/view/putuoshan.jpg");
+}
+.content1-pic2{
+	width:326px;
+	height: 223px;
+	background-image: url("../images/view/guangxi.jpg");
+}
 .content2{
-	height: 440px;
+	height: 442px;
 	width:1002px;
 	margin-top:9px;
 }
-
-
+.content2-pic1{
+	width:326px;
+	height: 223px;
+	background-image: url("../images/view/nanjing.jpg");
+}
+.content2-pic2{
+	width:326px;
+	height: 223px;
+	background-image: url("../images/view/qiandong.jpg");
+}
+.content2-pic3{
+	width:326px;
+	height: 223px;
+	background-image: url("../images/view/hulunbeier.jpg");
+}
+.content3-pic1{
+	width:326px;
+	height: 223px;
+	background-image: url("../images/view/guangdong.jpg");
+}
+.content3-pic2{
+	width:326px;
+	height: 223px;
+	background-image: url("../images/view/chenxi.jpg");
+}
+.content3-pic3{
+	width:326px;
+	height: 223px;
+	background-image: url("../images/view/shuye.jpg");
+}
+.content4-pic1{
+	width:326px;
+	height: 223px;
+	background-image: url("../images/view/jiuzhaigou.jpg");
+}
+.content4-pic2{
+	width:326px;
+	height: 223px;
+	background-image: url("../images/view/changbaishan.jpg");
+}
+.content4-pic3{
+	width:326px;
+	height: 223px;
+	background-image: url("../images/view/langya1.jpg");
+}
+.content5-pic1{
+	width:326px;
+	height: 223px;
+	background-image: url("../images/view/aozhou.jpg");
+}
+.content5-pic2{
+	width:326px;
+	height: 223px;
+	background-image: url("../images/view/xinxilan.jpg");
+}
+.content5-pic3{
+	width:326px;
+	height: 223px;
+	background-image: url("../images/view/jianpuzhai.jpg");
+}
+.content6-pic1{
+	width:326px;
+	height: 223px;
+	background-image: url("../images/view/jiazhou.jpg");
+}
+.content6-pic2{
+	width:326px;
+	height: 223px;
+	background-image: url("../images/view/moningdun.jpg");
+}
+.content6-pic3{
+	width:326px;
+	height: 223px;
+	background-image: url("../images/view/yuenan.jpg");
+}
 .nextPage{
 	height: 136px;
 	width: 1002px;
 	margin: 0 auto;
-	background-color: blue;
 }
-
-
-
-
-
-
-
-
-
-
+.next-page{
+	margin-top:40px;
+	margin-left:575px;
+}
+.next-page li{
+	width:37px;
+	height: 37px;
+	list-style: none;
+	float: left;
+	background-color:#d6d6d6;
+	margin-left: 11px;
+	text-align: center;
+	line-height: 37px;
+}
+.next-page li a{
+	text-decoration: none;
+}
 #footer{
 	height: 90px;
 }
